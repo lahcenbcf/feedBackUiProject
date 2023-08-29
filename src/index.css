@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*my pallete
+    Text: #1b0b09 (RGB: 27, 11, 9)
+    Background: #f6e6e4 (RGB: 246, 230, 228)
+    Primary: #85ccd5 (RGB: 133, 204, 213)
+    Secondary: #c0bbe8 (RGB: 192, 187, 232)
+    Accent: #3793a0 (RGB: 55, 147, 160)
+*/
+body{
+background-color: #f6e6e4;
+font-family: 'Raleway', sans-serif;
+}
+
+

@@ -1,0 +1,162 @@
+.wrapper{
+    height: auto;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+}
+.feedback{
+    width: 100%;
+    background-color: white;
+    margin: 10px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: relative;
+}
+.feedbackReview{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #85ccd5;
+    border: solid 3px #f6e6e4;
+    border-radius: 50%;
+    color: black;
+    display: grid;
+    place-items: center;
+    transform: translate(-25%,-25%);
+}
+.delete{
+    position: absolute;
+    top: 3px;
+    right: 10px;
+}
+.edit{
+    position: absolute;
+    top: 3px;
+    right: 30px;
+}
+.feedbackHeader{
+    display: flex;
+    margin: 10px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+.feedbackHeader .user .userInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.feedbackHeader .user .userInfo p{
+    font-size: small;
+    font-weight: bold;
+}
+.feedbackHeader .user .userInfo img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.feedbackHeader .date{
+    background-color: #c0bbe8;
+    padding: 4px;
+    border-radius: 4px;
+}
+.feedbackFooter {
+    display: flex;
+    margin: 10px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+.feedbackFooter .buttons{
+  display: flex;
+  gap: 10px;
+}
+.buttons button{
+    background-color: white;
+    color: gray;
+    font-weight: bold;
+    border: none;
+    padding: 8px;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+}
+.buttons button:hover::after{
+    height: 10px;
+    z-index: -1;
+}
+.buttons button::after{
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+position: absolute;
+height: 0px;
+width: 100%;
+background-color: #85ccd5;
+transition: all .4s ease-in;
+}
+
+/*response*/
+.responses{
+    width: 80%;
+    align-self: flex-end;
+}
+.respondInput{
+    border: solid 1px #3793a0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 0px;
+}
+.respondInput input{
+    border: none;
+    padding: 3px 6px;
+    width: 80%;
+    margin: 0px auto;
+    background-color: inherit;
+    border-radius: 4px;
+    outline: none;
+    color: gray;
+}
+.respondInput .sendBtn{
+    margin-right: 10px;
+}
+
+
+.responseContainer{
+    border-radius: 5px;
+    margin: 6px 0px;
+    padding: 10px;
+    border: solid 2px #3793a0;
+}
+.responseContainer .user{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    margin: 5px 0px;
+}
+.responseContainer .user .userInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.responseContainer .user .userInfo p{
+    font-size: x-small;
+}
+.responseContainer .user .userInfo img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+.responseContainer .user .date{
+    font-size: small;
+    background-color: #c0bbe8;
+}
+.responseContainer .responseContent{
+    font-size: small;
+}
