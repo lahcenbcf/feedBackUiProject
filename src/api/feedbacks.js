@@ -1,4 +1,4 @@
-const url="http://127.0.0.1:5000"
+const url="https://feedbackuiapi.onrender.com"
 const getFeedbacks=async()=>{
     const res=await fetch(url);
     const data=await res.json();
