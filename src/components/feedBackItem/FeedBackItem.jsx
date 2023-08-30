@@ -8,6 +8,7 @@ import {BsArrowReturnRight} from "react-icons/bs"
 import { addLike,addComment } from '../../api/feedbacks'
 import {FaRegComments} from "react-icons/fa"
 import format from 'date-fns/format'
+import {AnimatePresence, motion} from "framer-motion"
 
 function FeedBackItem({author,rate,date,feedback,likes,handleDelete,id,replys,getInputsToEdit,setEdit}){
   const [numlikes,setNumLikes]=useState(likes);
@@ -70,12 +71,17 @@ function FeedBackItem({author,rate,date,feedback,likes,handleDelete,id,replys,ge
           
           </div>
       </div>
+      <AnimatePresence>
       {
-        isReponseShown ? <div className='respondInput'>
+        isReponseShown ?<motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}> 
+        <div className='respondInput'>
         <input type='text' placeholder='comment ...' ref={commentRef} />
         <IoMdSend className='sendBtn' color='#3793a0' onClick={handleComment}/>
-    </div> : null
+    </div> 
+        </motion.div>: null
       }
+      </AnimatePresence>
+      
       
     </div>
     <div className='responses'>
