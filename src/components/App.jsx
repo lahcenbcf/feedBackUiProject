@@ -4,8 +4,10 @@ import FeedbackList from './FeedbackList';
 import { getFeedbacks } from '../api/feedbacks'
 import FeedbackSearch from './feedbackSearch/FeedbackSearch';
 import FeedBackForm from './feedBackForm/feedBackForm';
+import loadingGif from '../assets/Spinner.gif'
 function App() {
   const [feedbacks,setFeedbacks]=useState([]);
+  const [isLoading,setIsLoading]=useState(false)
   const [inputsToEdit,setInputsToEdit]=useState({
     author:"",
     feedback:"",
@@ -19,7 +21,9 @@ function App() {
     })
   }
   const fetchFeedbacks=useCallback(async()=>{
+    setIsLoading(true)
     const data=await getFeedbacks()  
+    setIsLoading(false)
     return data
   },[])
   useEffect(()=>{
@@ -32,7 +36,9 @@ function App() {
    </div>
    <FeedBackForm setList={setFeedbacks} inputsToEdit={inputsToEdit} isEdit={isEdited} setEdit={setIsEdited} />
    <FeedbackSearch total={feedbacks.length} setList={setFeedbacks} fetchFeeds={fetchFeedbacks} />
-   <FeedbackList list={feedbacks} setList={setFeedbacks} getInputsToEdit={getInputsToEdit} setEdit={setIsEdited} />
+   {
+    isLoading ? <img src={loadingGif} className='loadingGif' />: <FeedbackList list={feedbacks} setList={setFeedbacks} getInputsToEdit={getInputsToEdit} setEdit={setIsEdited} />
+   }
    </div>
   )
 }

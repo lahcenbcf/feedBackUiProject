@@ -1,6 +1,9 @@
 .container{
     width: 60vw;
     margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .AppTitle{
     font-weight: bold;
@@ -33,6 +36,11 @@
     height: 16px;
 }
 
+.loadingGif{
+    height: 40px;
+    width: 40px;
+    margin: 100px auto;
+}
 @media (max-width:550px) {
     .container{
         width: 100vw;
